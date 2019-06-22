@@ -61,7 +61,8 @@ DFLAG_NO_MAGIC = 0x200000
 """ Internal for pending connection (BEAM VM internal). """
 
 
-DEFAULT_DFLAGS = (DFLAG_EXT_REFS |
+DEFAULT_DFLAGS = (DFLAG_PUBLISHED |
+                  DFLAG_EXT_REFS |
                   DFLAG_EXT_PIDS_PORTS |
                   DFLAG_FUN_TAGS | DFLAG_NEW_FUN_TAGS |
                   DFLAG_EXPORT_PTR_TAG |
@@ -76,11 +77,11 @@ DEFAULT_DFLAGS = (DFLAG_EXT_REFS |
 
 
 class NodeOpts:
-    """ A class holding an integer with features that are supported
-        by this node, and the network cookie.
-    """
+  """ A class holding an integer with features that are supported
+      by this node, and the network cookie.
+  """
 
-    def __init__(self, cookie: str, dflags: int = DEFAULT_DFLAGS) -> None:
-        self.dflags_ = dflags
-        self.cookie_ = cookie
-        self.network_tick_time_ = 60
+  def __init__(self, cookie: str, dflags: int = DEFAULT_DFLAGS) -> None:
+    self.dflags_ = dflags
+    self.cookie_ = cookie
+    self.network_tick_time_ = 60
